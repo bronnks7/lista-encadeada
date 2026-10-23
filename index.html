@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demonstração interativa de uma lista simplesmente encadeada.">
+  <title>Lista simplesmente encadeada</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <p class="eyebrow">Estruturas de dados em C</p>
+      <h1>Lista simplesmente encadeada</h1>
+      <p>Explore inclusão, consulta, alteração e remoção de registros por código.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <p id="status" class="status" role="status" aria-live="polite">A lista está vazia.</p>
+
+    <section class="panel" aria-labelledby="add-title">
+      <h2 id="add-title">Incluir registro</h2>
+      <div class="form-grid">
+        <label for="new-code">Código inteiro</label>
+        <input id="new-code" type="number" min="-2147483648" max="2147483647" step="1" required>
+
+        <label for="new-name">Nome</label>
+        <input id="new-name" type="text" maxlength="49" required>
+
+        <label for="new-position">Posição</label>
+        <input id="new-position" type="number" min="0" step="1" value="0">
+      </div>
+      <p class="hint">Posições começam em 0. Para incluir no início ou no fim, use os botões correspondentes.</p>
+      <div class="button-row">
+        <button type="button" data-insert="start">Incluir no início</button>
+        <button type="button" data-insert="end">Incluir no fim</button>
+        <button type="button" class="secondary" data-insert="position">Incluir na posição</button>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="search-title">
+      <h2 id="search-title">Consultar por código</h2>
+      <form id="search-form" class="inline-form">
+        <label for="search-code">Código</label>
+        <input id="search-code" type="number" min="-2147483648" max="2147483647" step="1" required>
+        <button type="submit">Consultar</button>
+      </form>
+      <p id="search-result" class="result" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="edit-title">
+      <h2 id="edit-title">Alterar nome</h2>
+      <form id="edit-form" class="inline-form">
+        <label for="edit-code">Código</label>
+        <input id="edit-code" type="number" min="-2147483648" max="2147483647" step="1" required>
+        <label for="edit-name">Novo nome</label>
+        <input id="edit-name" type="text" maxlength="49" required>
+        <button type="submit">Salvar alteração</button>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="remove-title">
+      <h2 id="remove-title">Remover registro</h2>
+      <form id="remove-form" class="inline-form">
+        <label for="remove-code">Código</label>
+        <input id="remove-code" type="number" min="-2147483648" max="2147483647" step="1" required>
+        <button type="submit" class="danger">Remover</button>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="list-title">
+      <div class="list-heading">
+        <h2 id="list-title">Registros</h2>
+        <span id="list-count" class="count">0 elementos</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Posição</th><th>Código</th><th>Nome</th></tr>
+          </thead>
+          <tbody id="records"></tbody>
+        </table>
+      </div>
+      <p id="empty-message" class="hint">A lista está vazia.</p>
+    </section>
+
+    <p class="note">Esta página demonstra a mesma estrutura e operações do programa em C. Os dados ficam apenas nesta sessão do navegador.</p>
+  </main>
+
+  <footer class="container footer">
+    <a href="https://github.com/bronnks7/lista-encadeada">Ver o código no GitHub</a>
+  </footer>
+</body>
+</html>
