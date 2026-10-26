@@ -1,4 +1,4 @@
-# Lista simplesmente encadeada
+# Lista encadeada
 
 Projeto didático com o programa original em C e uma demonstração interativa para navegador. A versão web permite incluir registros no início, no fim ou em uma posição, consultar por código, alterar nomes, remover registros e visualizar a ordem da lista.
 
